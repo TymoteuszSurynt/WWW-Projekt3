@@ -2,14 +2,42 @@
 <head>
     <style>
 
-        .comment-body{
-
+        .add-comment-body{
+            border:black 1px solid;
+        }
+        .comment-area{
+            width: 100%;
+            height: 100px;
+        }
+        #usrform{
+            padding: 20px;
+            clear: both;
+        }
+        .form-element{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-select{
+            float: right;
         }
     </style>
 </head>
 <body>
 <div style="width: 500px">
+    <article class="">
+        <form class="add-comment-body" method="POST" action="" id="usrform">
+            <input type="text" name="nickname" placeholder="Pseudonim" class="form-element" style="float: left">
+            <select name="semester" form="usrform" class="form-select">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+            <textarea name="comment" form="usrform" style="clear: both" class="comment-area form-element" placeholder="Komentarz"></textarea>
+            <input type="submit" class="form-element">
 
+        </form>
+    </article>
 </div>
 </body>
 </html>

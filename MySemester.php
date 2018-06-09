@@ -18,7 +18,7 @@ class MySemester extends MyPage
 
     public function commentSection($comments=[])
     {
-        $s = "<article class=\"comment-box col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\" style='display: block'>
+        $s = "<article class=\"col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\">
         <div class=\"comment-head\">
             <h2>Komentarze:</h2>
         </div>
@@ -37,7 +37,23 @@ class MySemester extends MyPage
         $s.="
         </section>
     </article>";
+        return $s;
+    }
+    public function addComments($options, $target, $location){
+        $s="<article class=\"col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\">
+        <form class=\"add-comment-body\" method=\"POST\" action=\"$target\" id=\"usrform\">
+            <input type=\"text\" name=\"nickname\" placeholder=\"Pseudonim\" class=\"form-element\" style=\"float: left\">
+            <select name=\"semester\" form=\"usrform\" class=\"form-select\">";
+        foreach ($options as $option){
+            $s.="<option value='$option[1]'>$option[0]</option>";
+        }
+        $s.="</select>
+            <textarea name=\"comment\" form=\"usrform\" style=\"clear: both\" class=\"comment-area form-element\" placeholder=\"Komentarz\"></textarea>
+            <input name='page' type='hidden' value='$location'>
+            <input type=\"submit\" class=\"form-element\" value='Wyślij'>
 
+        </form>
+    </article>";
         return $s;
     }
 }

@@ -43,6 +43,7 @@ if (!$stmt->execute()) {
 if (!($res = $stmt->get_result())) {
     die();
 }
+$select=array();
 while ($result = $res->fetch_assoc()){
     $s.= $P->startArticle($result["link"],$result["title"]);
     $c1=explode(";",$result["1_card"]);
@@ -70,7 +71,9 @@ while ($result = $res->fetch_assoc()){
         array_push($comments,[$result3['nickname'],$result3['comment'],$result3['date']]);
     }
     $s.=$P->commentSection($comments);
+    array_push($select,[$result['title'],$result['id']]);
 }
+$s.=$P->addComments($select,"send.php","sem5.php");
 
 $s .= $P->stopDiv(3);
 $s .= $P->getFooter("Projekt III - Nowoczesne Technologie WWW");

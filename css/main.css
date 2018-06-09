@@ -5,6 +5,32 @@ html{
 .comment-box{
 
 }
+.add-comment-body{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #AA8B39;
+
+}
+.comment-area{
+    width: 100%;
+    background-color: #d0d0d0;
+    height: 100px;
+}
+#usrform{
+    padding: 20px;
+    clear: both;
+}
+.form-element{
+    display: block;
+    background-color: #d0d0d0;
+    margin-bottom: 5px;
+}
+.form-select{
+    background-color: #d0d0d0;
+    clear: both;
+    display: block;
+    margin-bottom: 10px;
+}
 .no-comments{
     text-align: center;
     font-style: italic;

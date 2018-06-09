@@ -43,6 +43,7 @@ echo $P->begin();
     $s.= $P->getPanel();
     $s.= $P->getHeaderSection(true,"Semestr I");
     $s.= $P->startRow();
+    $select=array();
     while ($result = $res->fetch_assoc()){
         $s.= $P->startArticle($result["link"],$result["title"]);
         $c1=explode(";",$result["1_card"]);
@@ -70,8 +71,9 @@ echo $P->begin();
             array_push($comments,[$result3['nickname'],$result3['comment'],$result3['date']]);
         }
         $s.=$P->commentSection($comments);
+        array_push($select,[$result['title'],$result['id']]);
     }
-
+    $s.=$P->addComments($select,"send.php","sem1.php");
     $s.=$P->stopDiv(3);
     $s.=$P->getFooter("Projekt III - Nowoczesne Technologie WWW");
     $s.=$P->end();
