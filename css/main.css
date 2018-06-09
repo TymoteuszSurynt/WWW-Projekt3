@@ -1,0 +1,171 @@
+html{
+    height: 100%;
+
+}
+.comment-box{
+
+}
+.no-comments{
+    text-align: center;
+    font-style: italic;
+    color: #718EA4;
+}
+.row article{
+    clear: both;
+}
+.comment-section{
+    position: relative;
+    padding: 10px;
+}
+.single-comment{
+    border: 2px solid #AA8B39;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.comment-date{
+    position: absolute;
+    right: 5%;
+    top:5%;
+}
+.comment-head{
+    color: #A6373F;
+    text-align: center;
+}
+.comment-head h2{
+    padding: 0;
+}
+.comment-separator{
+    border-top: 2px solid #AA8B39;
+    padding-top: 10px;
+}
+body{
+    margin: 0;
+    position: relative;
+    background-image: url("../img/bg700x525.jpg");
+    background: fixed #718EA4;
+}
+h1, h2, h3{
+    padding: 20px;
+    margin: 20px;
+}
+p{
+    margin: 16px;
+}
+/*panel http://paletton.com/#uid=33x0u0kllllaFw0g0qFqFg0w0aF*/
+.panel header{
+    width: 100%;
+    color: #eeeeee;
+    float: left;
+    background-color: #294F6D;
+}
+header h1{
+    font-size: 2.4em;
+    margin: 15px 0 5px 0;
+    text-align: center;
+}
+header h2{
+    text-align: center;
+}
+header h3{
+    text-align: center;
+}
+.panel-border header{
+    color: #123652;
+    background-color: #AA8B39;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.panel-border{
+    border-bottom: #AA8B39 2px solid;
+    border-left: #AA8B39 2px solid;
+    border-right: #AA8E39 2px solid;
+    min-height: 100%;
+}
+.panel{
+    background-color: #d0d0d0;
+    overflow: auto;
+}
+section{
+    clear: both;
+    padding: 10px;
+}
+
+footer{
+    clear: both;
+    color: #eeeeee;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#848484+0,494949+100 */
+    background: rgb(132,132,132); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(132,132,132,1) 0%, rgba(73,73,73,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(132,132,132,1) 0%,rgba(73,73,73,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(132,132,132,1) 0%,rgba(73,73,73,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#848484', endColorstr='#494949',GradientType=0 ); /* IE6-9 */
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+a{
+    color: #A6373F;
+    text-decoration: none;
+}
+a:hover{
+    color: #CF676F;
+}
+.img-background{
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    float: right;
+    margin-left: 10px;
+}
+
+.list-no-bullets{
+    list-style: none;
+}
+@media screen and (min-width: 2001px){
+    body{
+        background-image: url("../img/bg.jpeg");
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1250px){
+    body{
+        background-image: url("../img/bg1250x900.jpg");
+    }
+}
+@media screen and (min-width: 1251px) and (max-width: 2000px){
+    body{
+        background-image: url("../img/bg2000x1500.jpeg");
+    }
+}
+@media screen and (min-width: 800px){
+    .title-panel{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .panel{
+        border-radius: 15px;
+    }
+    .middle{
+        display: table-cell;
+        height: 100vh;
+        vertical-align: middle;
+    }
+    .panel-border header,
+    .panel-border{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    header h1{
+        font-size: 3em;
+    }
+}
