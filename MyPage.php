@@ -108,7 +108,10 @@ class MyPage
         <link rel=\"stylesheet\" href=\"css/reset.css\">
         <link rel=\"stylesheet\" href=\"css/nav.css\">
         <link rel=\"stylesheet\" href=\"css/grid.css\">
-        <link rel=\"stylesheet\" href=\"css/main.css\">";
+        <link rel=\"stylesheet\" href=\"css/main.css\">
+        <script type=\"text/javascript\" async
+          src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML\">
+        </script>";
         return $s;
     }
 
@@ -157,16 +160,16 @@ class MyPage
                         $s .= "<ul>";
                     }
                     $check = 0;
-                } else if (!strcmp($item, "\t")) {
+                } else if (!strcmp($item, "newol")) {
                     $s .= "<li>";
                     $check = 1;
-                } else if (!strcmp($item, "\t\t")) {
+                } else if (!strcmp($item, "newul")) {
                     $s .= "<li>";
                     $check = 2;
-                } else if (!strcmp($item, "\t\t\t")) {
+                } else if (!strcmp($item, "closeol")) {
                     $s .= "</ol>";
                     $s .= "</li>";
-                } else if (!strcmp($item, "\t\t\t\t")) {
+                } else if (!strcmp($item, "closeul")) {
                     $s .= "</ul>";
                     $s .= "</li>";
                 } else {

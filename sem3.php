@@ -1,18 +1,30 @@
 <?php
+$semesterNumber=3;
+$semesterName="Semestr III";
 require_once(__DIR__ . "/MyPage.php");
 require_once(__DIR__ . "/MySemester.php");
 require_once(__DIR__ . "/Database.php");
-$P = new MySemester("Semestr III", "Tymoteusz Surynt");
+$P = new MySemester($semesterName, "Tymoteusz Surynt");
 $P->setDescription("Moja przygoda z edukacją");
+if (!($stmt = $mysqli->prepare("SELECT id,title,link,1_title,1_card,1_ol,1_bonus,2_title,2_card,2_ol,2_bonus FROM semesters WHERE sem_num LIKE ".$semesterNumber))) {
+    die ();
+}
+if (!$stmt->execute()) {
+    die ();
+}
+if (!($res = $stmt->get_result())) {
+    die();
+}
 echo $P->begin();
 ?>
-<head>
-    <?php
-    echo $P->getHeader();
-    ?>
-</head>
+    <head>
+        <?php
+        echo $P->getHeader();
+        ?>
+    </head>
 <?php
-$s = $P->startBody(false);
+
+$s= $P->startBody(false);
 if (!($stmt2 = $mysqli->prepare("SELECT menu.option,menu.link FROM menu"))) {
     die ();
 }
@@ -22,27 +34,21 @@ if (!$stmt2->execute()) {
 if (!($res2 = $stmt2->get_result())) {
     die();
 }
-$options = array();
-$links = array();
-while ($result2 = $res2->fetch_assoc()) {
-    array_push($options, $result2['option']);
-    array_push($links, $result2['link']);
+$options=array();
+$links=array();
+while ($result2 = $res2->fetch_assoc()){
+    array_push($options,$result2['option']);
+    array_push($links,$result2['link']);
 }
-$s .= $P->getMenu($options, $links);
-$s .= $P->startContent();
-$s .= $P->getPanel();
-$s .= $P->getHeaderSection(true, "Semestr III");
-$s .= $P->startRow();
-
-
-if (!($stmt = $mysqli->prepare("SELECT id,title,link,1_title,1_card,1_ol,1_bonus,2_title,2_card,2_ol,2_bonus FROM semesters  WHERE sem_num LIKE 3"))) {
-    die ();
-}
-if (!$stmt->execute()) {
-    die ();
-}
-if (!($res = $stmt->get_result())) {
-    die();
+$s.= $P->getMenu($options,$links);
+$s.= $P->startContent();
+$s.= $P->getPanel();
+$s.= $P->getHeaderSection(true,$semesterName);
+$s.= $P->startRow();
+if(isset($_GET['success'])){
+    $s.=$P->prompt("Komentarz dodany",true);
+}elseif (isset($_GET['fail'])){
+    $s.=$P->prompt("Nie dodano komentarza",false);
 }
 $select=array();
 while ($result = $res->fetch_assoc()){
@@ -73,11 +79,24 @@ while ($result = $res->fetch_assoc()){
     }
     $s.=$P->commentSection($comments);
     array_push($select,[$result['title'],$result['id']]);
+};echo $s; ?>
+<?php
+$num=rand(1,6);
+if (!($stmt4 = $mysqli->prepare("SELECT captcha.option FROM captcha WHERE id LIKE ".$num))) {
+    die ();
 }
-$s.=$P->addComments($select,"send.php","sem3.php");
-
-$s .= $P->stopDiv(3);
-$s .= $P->getFooter("Projekt I - Nowoczesne Technologie WWW");
-$s .= $P->end();
+if (!$stmt4->execute()) {
+    die ();
+}
+if (!($res4 = $stmt4->get_result())) {
+    die();
+}
+if($result4 = $res4->fetch_assoc()){
+    $s=$P->addComments($select,"send.php","sem".$semesterNumber.".php",[$num,$result4['option']]);
+}
+$s.=$P->stopDiv(3);
+$s.=$P->getFooter("Projekt III - Nowoczesne Technologie WWW");
+$s.=$P->end();
 echo $s;
+
 ?>

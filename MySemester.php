@@ -39,23 +39,39 @@ class MySemester extends MyPage
     </article>";
         return $s;
     }
-    public function addComments($options, $target, $location){
+    public function prompt($statement, $success){
+        if($success){
+            $s="<section class='success'><p>$statement</p></section>";
+        }else{
+            $s="<section class='error'><p>$statement</p></section>";
+        }
+        return $s;
+    }
+    public function addComments($options, $target, $location, $captcha){
         $s="<article class=\"col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\">
         <form class=\"add-comment-body\" method=\"POST\" action=\"$target\" id=\"usrform\">
+       
             <input type=\"text\" name=\"nickname\" placeholder=\"Pseudonim\" class=\"form-element\" style=\"float: left\">
             <select name=\"semester\" form=\"usrform\" class=\"form-select\">";
         foreach ($options as $option){
             $s.="<option value='$option[1]'>$option[0]</option>";
         }
         $s.="</select>
-            <textarea name=\"comment\" form=\"usrform\" style=\"clear: both\" class=\"comment-area form-element\" placeholder=\"Komentarz\"></textarea>
+            <textarea name=\"comment\" form=\"usrform\" class=\"comment-area form-element\" placeholder=\"Komentarz\"></textarea>
+            <div class='captcha-section'>
             <input name='page' type='hidden' value='$location'>
-            <input type=\"submit\" class=\"form-element\" value='Wyślij'>
+            <p>$$$captcha[1]$$</p>
+            <input type=\"submit\" style='float:right' value='Wyślij'>
+            Korzystając ze wzoru: ?=
+            <input type='text' class='captcha' name='captcha'>
+            <input type='hidden' name='captchaNumber' value='$captcha[0]'>
+            </div>
 
         </form>
     </article>";
         return $s;
     }
+
 }
 
 ?>

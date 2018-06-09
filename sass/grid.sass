@@ -1,0 +1,549 @@
+$small: 575px
+$medium: 768 px
+$large: 992px
+$extra-large: 1200px
+
+%margins
+  float: left
+  margin-bottom: 0.5em
+  margin-right: 0.55%
+  margin-left: 0.55%
+
+.container
+  width: 100%
+  float: left
+
+.row
+  float: left
+  box-sizing: border-box
+  width: 100%
+  padding: 20px
+
+.row h2
+  text-align: center
+
+.col-12-1
+  width: 7.2333%
+  @extend %margins
+
+.col-12-2
+  width: 15.5667%
+  @extend %margins
+
+.col-12-3
+  width: 23.9%
+  @extend %margins
+
+.col-12-4
+  width: 32.2333%
+  @extend %margins
+
+.col-12-5
+  width: 40.5667%
+  @extend %margins
+
+.col-12-6
+  width: 48.9%
+  @extend %margins
+
+.col-12-7
+  width: 57.2333%
+  @extend %margins
+
+.col-12-8
+  width: 65.5667%
+  @extend %margins
+
+.col-12-9
+  width: 73.9%
+  @extend %margins
+
+.col-12-10
+  width: 82.2333%
+  @extend %margins
+
+.col-12-11
+  width: 90.5667%
+  @extend %margins
+
+.col-12-12
+  width: 100%
+
+.offset-12-1
+  margin-left: 8.3333%
+
+.offset-12-2
+  margin-left: 17.4%
+
+.offset-12-3
+  margin-left: 25.825%
+
+.offset-12-4
+  margin-left: 34.25%
+
+.offset-12-5
+  margin-left: 42.675%
+
+.offset-12-6
+  margin-left: 51.1%
+
+.offset-12-7
+  margin-left: 59.525%
+
+.offset-12-8
+  margin-left: 67.95%
+
+.offset-12-9
+  margin-left: 76.375%
+
+.offset-12-10
+  margin-left: 84.8%
+
+.offset-12-11
+  margin-left: 93.225%
+
+@media screen and (max-width: $small)
+  %margins-xs
+    float: left
+    margin-bottom: 0.5em
+    margin-right: 0.55%
+    margin-left: 0.55%
+
+  .col-xs-12-1
+    width: 7.2333%
+    @extend %margins-xs
+
+  .col-xs-12-2
+    width: 15.5667%
+    @extend %margins-xs
+
+  .col-xs-12-3
+    width: 23.9%
+    @extend %margins-xs
+
+  .col-xs-12-4
+    width: 32.2333%
+    @extend %margins-xs
+
+  .col-xs-12-5
+    width: 40.5667%
+    @extend %margins-xs
+
+  .col-xs-12-6
+    width: 48.9%
+    @extend %margins-xs
+
+  .col-xs-12-7
+    width: 57.2333%
+    @extend %margins-xs
+
+  .col-xs-12-8
+    width: 65.5667%
+    @extend %margins-xs
+
+  .col-xs-12-9
+    width: 73.9%
+    @extend %margins-xs
+
+  .col-xs-12-10
+    width: 82.2333%
+    @extend %margins-xs
+
+  .col-xs-12-11
+    width: 90.5667%
+    @extend %margins-xs
+
+  .col-xs-12-12
+    width: 100%
+
+  .offset-xs-12-0
+    margin-left: 0.55%
+
+  .offset-xs-12-1
+    margin-left: 8.975%
+
+  .offset-xs-12-2
+    margin-left: 17.4%
+
+  .offset-xs-12-3
+    margin-left: 25.825%
+
+  .offset-xs-12-4
+    margin-left: 34.25%
+
+  .offset-xs-12-5
+    margin-left: 42.675%
+
+  .offset-xs-12-6
+    margin-left: 51.1%
+
+  .offset-xs-12-7
+    margin-left: 59.525%
+
+  .offset-xs-12-8
+    margin-left: 67.95%
+
+  .offset-xs-12-9
+    margin-left: 76.375%
+
+  .offset-xs-12-10
+    margin-left: 84.8%
+
+  .offset-xs-12-11
+    margin-left: 93.225%
+
+@media screen and (min-width: $small+1)
+  %margins-sm
+    float: left
+    margin-bottom: 0.5em
+    margin-right: 0.55%
+    margin-left: 0.55%
+
+  .flex-box
+    display: flex
+
+  .col-sm-12-1
+    width: 7.2333%
+    @extend %margins-sm
+
+  .col-sm-12-2
+    width: 15.5667%
+    @extend %margins-sm
+
+  .col-sm-12-3
+    width: 23.9%
+    @extend %margins-sm
+
+  .col-sm-12-4
+    width: 32.2333%
+    @extend %margins-sm
+
+  .col-sm-12-5
+    width: 40.5667%
+    @extend %margins-sm
+
+  .col-sm-12-6
+    width: 48.9%
+    @extend %margins-sm
+
+  .col-sm-12-7
+    width: 57.2333%
+    @extend %margins-sm
+
+  .col-sm-12-8
+    width: 65.5667%
+    @extend %margins-sm
+
+  .col-sm-12-9
+    width: 73.9%
+    @extend %margins-sm
+
+  .col-sm-12-10
+    width: 82.2333%
+    @extend %margins-sm
+
+  .col-sm-12-11
+    width: 90.5667%
+    @extend %margins-sm
+
+  .col-sm-12-12
+    width: 100%
+    @extend %margins-sm
+
+  .offset-sm-12-0
+    margin-left: 0.55%
+
+  .offset-sm-12-1
+    margin-left: 8.975%
+
+  .offset-sm-12-2
+    margin-left: 17.4%
+
+  .offset-sm-12-3
+    margin-left: 25.825%
+
+  .offset-sm-12-4
+    margin-left: 34.25%
+
+  .offset-sm-12-5
+    margin-left: 42.675%
+
+  .offset-sm-12-6
+    margin-left: 51.1%
+
+  .offset-sm-12-7
+    margin-left: 59.525%
+
+  .offset-sm-12-8
+    margin-left: 67.95%
+
+  .offset-sm-12-9
+    margin-left: 76.375%
+
+  .offset-sm-12-10
+    margin-left: 84.8%
+
+  .offset-sm-12-11
+    margin-left: 93.225%
+
+@media screen and (min-width: $medium)
+  %margins-md
+    float: left
+    margin-bottom: 0.5em
+    margin-right: 0.55%
+    margin-left: 0.55%
+
+  .col-md-12-1
+    width: 7.2333%
+    @extend %margins-md
+
+  .col-md-12-2
+    width: 15.5667%
+    @extend %margins-md
+
+  .col-md-12-3
+    width: 23.9%
+    @extend %margins-md
+
+  .col-md-12-4
+    width: 32.2333%
+    @extend %margins-md
+
+  .col-md-12-5
+    width: 40.5667%
+    @extend %margins-md
+
+  .col-md-12-6
+    width: 48.9%
+    @extend %margins-md
+
+  .col-md-12-7
+    width: 57.2333%
+    @extend %margins-md
+
+  .col-md-12-8
+    width: 65.5667%
+    @extend %margins-md
+
+  .col-md-12-9
+    width: 73.9%
+    @extend %margins-md
+
+  .col-md-12-10
+    width: 82.2333%
+    @extend %margins-md
+
+  .col-md-12-11
+    width: 90.5667%
+    @extend %margins-md
+
+  .col-md-12-12
+    width: 100%
+
+  .offset-md-12-1
+    margin-left: 8.975%
+
+  .offset-md-12-2
+    margin-left: 17.4%
+
+  .offset-md-12-3
+    margin-left: 25.825%
+
+  .offset-md-12-4
+    margin-left: 34.25%
+
+  .offset-md-12-5
+    margin-left: 42.675%
+
+  .offset-md-12-6
+    margin-left: 51.1%
+
+  .offset-md-12-7
+    margin-left: 59.525%
+
+  .offset-md-12-8
+    margin-left: 67.95%
+
+  .offset-md-12-9
+    margin-left: 76.375%
+
+  .offset-md-12-10
+    margin-left: 84.8%
+
+  .offset-md-12-11
+    margin-left: 93.225%
+
+@media screen and (min-width: $large)
+  %margins-lg
+    float: left
+    margin-bottom: 0.5em
+    margin-right: 0.55%
+    margin-left: 0.55%
+  .col-lg-12-1
+    width: 7.2333%
+    @extend %margins-lg
+
+  .col-lg-12-2
+    width: 15.5667%
+    @extend %margins-lg
+
+  .col-lg-12-3
+    width: 23.9%
+    @extend %margins-lg
+
+  .col-lg-12-4
+    width: 32.2333%
+    @extend %margins-lg
+
+  .col-lg-12-5
+    width: 40.5667%
+    @extend %margins-lg
+
+  .col-lg-12-6
+    width: 48.9%
+    @extend %margins-lg
+
+  .col-lg-12-7
+    width: 57.2333%
+    @extend %margins-lg
+
+  .col-lg-12-8
+    width: 65.5667%
+    @extend %margins-lg
+
+  .col-lg-12-9
+    width: 73.9%
+    @extend %margins-lg
+
+  .col-lg-12-10
+    width: 82.2333%
+    @extend %margins-lg
+
+  .col-lg-12-11
+    width: 90.5667%
+    @extend %margins-lg
+
+  .col-lg-12-12
+    width: 100%
+
+  .offset-lg-12-1
+    margin-left: 8.975%
+
+  .offset-lg-12-2
+    margin-left: 17.4%
+
+  .offset-lg-12-3
+    margin-left: 25.825%
+
+  .offset-lg-12-4
+    margin-left: 34.25%
+
+  .offset-lg-12-5
+    margin-left: 42.675%
+
+  .offset-lg-12-6
+    margin-left: 51.1%
+
+  .offset-lg-12-7
+    margin-left: 59.525%
+
+  .offset-lg-12-8
+    margin-left: 67.95%
+
+  .offset-lg-12-9
+    margin-left: 76.375%
+
+  .offset-lg-12-10
+    margin-left: 84.8%
+
+  .offset-lg-12-11
+    margin-left: 93.225%
+
+@media screen and (min-width: $extra-large)
+  %margins-xl
+    float: left
+    margin-bottom: 0.5em
+    margin-right: 0.55%
+    margin-left: 0.55%
+
+  .offset-xl-12-11
+    margin-left: 93.225%
+    @extend %margins-xl
+
+  .col-xl-12-1
+    width: 7.2333%
+    @extend %margins-xl
+
+  .col-xl-12-2
+    width: 15.5667%
+    @extend %margins-xl
+
+  .col-xl-12-3
+    width: 23.9%
+    @extend %margins-xl
+
+  .col-xl-12-4
+    width: 32.2333%
+    @extend %margins-xl
+
+  .col-xl-12-5
+    width: 40.5667%
+    @extend %margins-xl
+
+  .col-xl-12-6
+    width: 48.9%
+    @extend %margins-xl
+
+  .col-xl-12-7
+    width: 57.2333%
+    @extend %margins-xl
+
+  .col-xl-12-8
+    width: 65.5667%
+    @extend %margins-xl
+
+  .col-xl-12-9
+    width: 73.9%
+    @extend %margins-xl
+
+  .col-xl-12-10
+    width: 82.2333%
+    @extend %margins-xl
+
+  .col-xl-12-11
+    width: 90.5667%
+    @extend %margins-xl
+
+  .col-xl-12-12
+    width: 100%
+
+  .offset-xl-12-1
+    margin-left: 8.975%
+
+  .offset-xl-12-2
+    margin-left: 17.4%
+
+  .offset-xl-12-3
+    margin-left: 25.825%
+
+  .offset-xl-12-4
+    margin-left: 34.25%
+
+  .offset-xl-12-5
+    margin-left: 42.675%
+
+  .offset-xl-12-6
+    margin-left: 51.1%
+
+  .offset-xl-12-7
+    margin-left: 59.525%
+
+  .offset-xl-12-8
+    margin-left: 67.95%
+
+  .offset-xl-12-9
+    margin-left: 76.375%
+
+  .offset-xl-12-10
+    margin-left: 84.8%
+

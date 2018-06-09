@@ -1,10 +1,12 @@
 <?php
+$semesterNumber=1;
+$semesterName="Semestr I";
 require_once(__DIR__ . "/MyPage.php");
 require_once(__DIR__ . "/MySemester.php");
 require_once(__DIR__ . "/Database.php");
-$P = new MySemester("Semestr I", "Tymoteusz Surynt");
+$P = new MySemester($semesterName, "Tymoteusz Surynt");
 $P->setDescription("Moja przygoda z edukacją");
-if (!($stmt = $mysqli->prepare("SELECT id,title,link,1_title,1_card,1_ol,1_bonus,2_title,2_card,2_ol,2_bonus FROM semesters WHERE sem_num LIKE 1"))) {
+if (!($stmt = $mysqli->prepare("SELECT id,title,link,1_title,1_card,1_ol,1_bonus,2_title,2_card,2_ol,2_bonus FROM semesters WHERE sem_num LIKE ".$semesterNumber))) {
     die ();
 }
 if (!$stmt->execute()) {
@@ -41,8 +43,13 @@ echo $P->begin();
     $s.= $P->getMenu($options,$links);
     $s.= $P->startContent();
     $s.= $P->getPanel();
-    $s.= $P->getHeaderSection(true,"Semestr I");
+    $s.= $P->getHeaderSection(true,$semesterName);
     $s.= $P->startRow();
+    if(isset($_GET['success'])){
+        $s.=$P->prompt("Komentarz dodany",true);
+    }elseif (isset($_GET['fail'])){
+        $s.=$P->prompt("Nie dodano komentarza",false);
+    }
     $select=array();
     while ($result = $res->fetch_assoc()){
         $s.= $P->startArticle($result["link"],$result["title"]);
@@ -72,10 +79,24 @@ echo $P->begin();
         }
         $s.=$P->commentSection($comments);
         array_push($select,[$result['title'],$result['id']]);
+    };echo $s; ?>
+    <?php
+    $num=rand(1,6);
+        if (!($stmt4 = $mysqli->prepare("SELECT captcha.option FROM captcha WHERE id LIKE ".$num))) {
+            die ();
+        }
+        if (!$stmt4->execute()) {
+            die ();
+        }
+        if (!($res4 = $stmt4->get_result())) {
+            die();
+        }
+    if($result4 = $res4->fetch_assoc()){
+        $s=$P->addComments($select,"send.php","sem".$semesterNumber.".php",[$num,$result4['option']]);
     }
-    $s.=$P->addComments($select,"send.php","sem1.php");
     $s.=$P->stopDiv(3);
     $s.=$P->getFooter("Projekt III - Nowoczesne Technologie WWW");
     $s.=$P->end();
     echo $s;
+
 ?>
