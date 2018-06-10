@@ -48,7 +48,7 @@ class MySemester extends MyPage
         return $s;
     }
     public function addComments($options, $target, $location, $captcha){
-        $s="<article class=\"col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\">
+        $s="<section class=\"col-12-12 offset-md-12-1 col-md-12-10 offset-lg-12-2 col-lg-12-8\">
         <form class=\"add-comment-body\" method=\"POST\" action=\"$target\" id=\"usrform\">
        
             <input type=\"text\" name=\"nickname\" placeholder=\"Pseudonim\" class=\"form-element\" style=\"float: left\">
@@ -68,7 +68,7 @@ class MySemester extends MyPage
             </div>
 
         </form>
-    </article>";
+    </section>";
         return $s;
     }
 

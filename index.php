@@ -32,25 +32,24 @@ $s .= $P->startContent();
 $s .= $P->getPanel();
 $s .= $P->getHeaderSection();
 $s .= $P->startRow();
-$s .= $P->getSection("
-                    Jestem studentem 3 roku Politechniki Wrocławkiej, wydziału Podstawowoych Problemów Techniki,
+$s .= $P->getSection("Jestem studentem 3 roku Politechniki Wrocławkiej, wydziału Podstawowoych Problemów Techniki,
                     kierunku Informatyka. Oprócz zmagań związanych z zaliczaniem kolejnych przedmiotów jestem również
                     starostą mojego roku. Poniższa strona jest poświęcona moim postępom w edukacji oraz kolejnym
-                    przedmiotom z którymi zmagałem się dotychczas podczas studiów.");
+                    przedmiotom z którymi zmagałem się dotychczas podczas studiów.",'avatar');
 $s .= $P->startFlex();
 $s .= $P->getCard("Moja Edukacja", ["<a href='http://www.lo3.opole.pl/index2.php'>Szkoła średnia</a>",
-    "<a href=\"sem1.php\">Semestr I</a>",
-    "<a href=\"sem2.php\">Semestr II</a>",
-    "<a href=\"sem3.php\">Semestr III</a>",
-    "<a href=\"sem4.php\">Semestr IV</a>",
-    "<a href=\"sem5.php\">Semestr V</a>"], true);
+    "<a href=\"semester.php?semesterNumber=1&semesterName=Semestr%20I\">Semestr I</a>",
+    "<a href=\"semester.php?semesterNumber=2&semesterName=Semestr%20II\">Semestr II</a>",
+    "<a href=\"semester.php?semesterNumber=3&semesterName=Semestr%20III\">Semestr III</a>",
+    "<a href=\"semester.php?semesterNumber=4&semesterName=Semestr%20IV\">Semestr IV</a>",
+    "<a href=\"semester.php?semesterNumber=5&semesterName=Semestr%20V\">Semestr V</a>"], true);
 $s .= $P->getCard("Moje Hobby", ["Literatura Lovecrafta",
-    "\t\t",
+    "newul",
     "Gry",
     "Dark Sous III",
     "GO",
-    "Poker", "\t\t\t\t"], true, "<p><a href=\"hobby.php\">Więcej informacji o moich hobby</a></p>");
-$s .= $P->stopDiv(4);
+    "Poker", "closeul"], true, "<p><a href=\"hobby.php\">Więcej informacji o moich hobby</a></p>");
+$s .= $P->stopDiv(5);
 $s .= $P->getFooter("Projekt I - Nowoczesne Technologie WWW");
 $s .= $P->end();
 echo $s;

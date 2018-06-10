@@ -105,10 +105,18 @@ class MyPage
         <meta name='description' content='" . $this->description . "'>
         <meta name='author' content='" . $this->author . "'>
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"img/favicon_package_v0.16/apple-touch-icon.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"img/favicon_package_v0.16/favicon-32x32.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"img/favicon_package_v0.16/favicon-16x16.png\">
+        <link rel=\"manifest\" href=\"img/favicon_package_v0.16/site.webmanifest\">
+        <link rel=\"mask-icon\" href=\"img/favicon_package_v0.16/safari-pinned-tab.svg\">
+        <meta name=\"msapplication-TileColor\" content=\"#da532c\">
+        <meta name=\"theme-color\" content=\"#ffffff\">
         <link rel=\"stylesheet\" href=\"css/reset.css\">
         <link rel=\"stylesheet\" href=\"css/nav.css\">
         <link rel=\"stylesheet\" href=\"css/grid.css\">
         <link rel=\"stylesheet\" href=\"css/main.css\">
+        <script src=\"js/js.js\"></script>
         <script type=\"text/javascript\" async
           src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML\">
         </script>";
@@ -192,11 +200,17 @@ class MyPage
         return $s;
     }
 
-    public function getSection($content)
+    public function getSection($content, $alt="")
     {
-        return "<section>
-                <p>" . $content . "</p>
+        $s= "<section>";
+        if(strcmp($alt,"")) {
+            //$s.="<img class='profile-picture' id='img-avatar-www' src='' alt='$alt'>";
+            $s.="<div id='img-avatar-www'></div>";
+        }
+        $s.="<p class='profile-p'>" . $content . "</p>
+        <p  class='profile-section'></p>
             </section>";
+        return $s;
     }
 
     public function getPanel()
