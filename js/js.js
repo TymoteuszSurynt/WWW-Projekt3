@@ -1,6 +1,8 @@
 window.onload=function () {
     var avatar=document.getElementById('img-avatar-www');
-    avatar.onload =onLoadFunction('img/profile.png');
+    if(avatar) {
+        avatar.onload = onLoadFunction('img/profile.png');
+    }
 };
 function onLoadFunction(src) {
     if(localStorage.getItem("img-avatar-www") === null){

@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 $semesterNumber=1;
 $semesterName="Semestr I";
 if(isset($_GET['semesterNumber'])&& isset($_GET['semesterName']) && !empty($_GET['semesterNumber'])&& !empty($_GET['semesterName'])){
@@ -11,7 +12,7 @@ require_once(__DIR__ . "/MyPage.php");
 require_once(__DIR__ . "/MySemester.php");
 require_once(__DIR__ . "/Database.php");
 $P = new MySemester($semesterName, "Tymoteusz Surynt");
-$P->setDescription("Moja przygoda z edukacją");
+$P->setDescription("Moja przygoda z edukacj?");
 if (!($stmt = $mysqli->prepare("SELECT id,title,link,1_title,1_card,1_ol,1_bonus,2_title,2_card,2_ol,2_bonus FROM semesters WHERE sem_num LIKE ".$semesterNumber))) {
     die ();
 }
